@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+button{
+    font-weight: 600;
+}
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.title{font-size: 27px;
+    color: #3f3b3b;
+    word-spacing: 0px;
+    letter-spacing: 10px;
+    font-weight: 900;
+    text-align: center;
+    padding: 20px;
+    background-color: #cf8dc4;
+    font-family: 'Montserrat', sans-serif;}
+.main{
+    background-color: rgb(123, 192, 232);
+    height: 800px;
+    padding-top: 10px;
+}
+.box{
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 2px solid rgb(224, 224, 224);
+    padding: 15px 0px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    width: 98%;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    padding: 20px 0 20px 0;
+    border: 2px solid rgb(212, 86, 86);
+    text-align: center;
+}
+.soil {
+    width: 45%;
+    float: left;
+}
+.air {
+    width: 55%;
+    float: right;
+}
+.info p i{
+    font-size: 16px;
+    padding: 4px 4px;
+    border: 1px solid;
+    color: #26931b;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.box-btn{
+    padding: 35px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 84%;
+}
+.den {
+    width: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.may-bom {
+    width: 50%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button:hover{
+    /* width: 20%; */
+    cursor: pointer;
+}
+.box button:hover{
+    /* color: red; */
+    background-color: grey;
+}
+.btn-den{
+    width: 150px;
+    height: 70px;
+    background-color: #dd4a15;
+    border: none;
+    font-size: 24px;
+    box-shadow: 1px 3px 6px #963707;
+}
+.btn-bom{
+    width: 150px;
+    height: 70px;
+    background-color: #dd4a15;
+    border: none;
+    font-size: 24px;
+    box-shadow: 1px 3px 6px #963707;
+}
+.soil-humidity{}
+.air-humidity{}
+.air-temperature{}
+
+.label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 5px;
+}
+.content{
+    font-weight: 900;
+    font-size: 21px;
+    text-align: center;
+    color: #46a066;
+}
+.setTime{
+    margin-right: 10px;
+}
+.ThemThoiGian{
+    display: none;
+}
+.btn-setTime{
+    height: 45px;
+    padding: 5px 9px;
+    background-color: #5ea16f;
+    border: none;
+    align-items: center;
+    box-shadow: 1px 3px 6px #54c150;
+}
+.time{
+    position: relative;
+    padding: 10px;
+    /* display: flex; */
+    justify-content: center;}
+.now ,.set{
+    height: 45px;
+    padding: 5px 9px;
+    background-color: #5ea16f;
+    border: none;
+    margin-right: 24px;
+    box-shadow: 1px 3px 6px #54c150;
+}
+.set{
+    /* position: relative; */
+}
+.box-time{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(224, 224, 224);
+    justify-content: center;
+}
+.set-calender-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #41856c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.set-calender{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.settime{
+    width: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+.submitForm{
+    width: 50%;
+    float: right;
+    display: flex;
+    justify-content: center;
+}
+.set-time{
+    color: #32c5d7;
+    margin: 0 11px;
+    background-color: #c176a7;
+    padding: 7px 8px;
+    border: none;
+    font-size: 21px;
+    align-items: center;
+    text-align: center;
+}
+.submit-form{
+    font-size: 16px;
+    padding: 5px 10px;
+    box-shadow: 1px 3px 3px 1px #cd7c85;
+    border: 2px solid #cd7c85;
+    align-items: center;
+    text-align: center;
+}
+.update{  
+    display: none;
+    width: 90%;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 42px;
+    margin: 0 auto;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+/* resulf */
+.result{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Title{
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 2px solid rgb(73, 44, 217);
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: #d21128;
+    font-weight: 600;
+}
+.ListTime{
+    margin-left: 20%;
+    margin-right: 20%;
+    list-style: none;
+    margin-top: 20px;
+}
+.TimeItem{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.TimeItem-Text{
+    margin-right: 10px;
+}
+.Delete-TimeItem{
+    border: none;
+    background-color: #ccc;
+    font-size: 20px;
+    color: #d16e6e;
+}
+.Delete-TimeItem:hover{
+    cursor: pointer;
+}

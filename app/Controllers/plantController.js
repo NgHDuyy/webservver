@@ -1,5 +1,6 @@
 const { client, channel } = require("../../client");
 const Time = require("../models/Time");
+const Information = require("../models/Information");
 const schedule = require("node-schedule");
 
 class plantController {
@@ -14,6 +15,21 @@ class plantController {
   updateData(req, res) {
     client.publish(channel("plant"), "UPDATE");
   }
+  getInfomation(req, res) {
+    Information.findOne({}, (err, data) => {
+      if (!err) {
+        res.json(data);
+      } else {
+        res.status(400).json({ error: "Error" });
+      }
+    });
+  }
+  async updateInfomation(req, res) {
+    const id = "63a5cf62320ace041b3d27be";
+    const result = await Information.findOneAndUpdate({_id: id}, { ...req.body}, { new: true});
+    res.status(200).json(result);
+  }
+  
   getTime(req, res) {
     Time.find({}, null, { sort: { sum: 1 } }, (err, data) => {
       if (!err) {

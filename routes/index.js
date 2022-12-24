@@ -8,5 +8,7 @@ module.exports = {
         app.post('/schedule', plantController.schedule);
         app.post('/time', plantController.addTime);
         app.delete('/time', plantController.removeTime);
+        app.get('/information', plantController.getInfomation);
+        app.post('/update-information', plantController.updateInfomation);
     }
 }

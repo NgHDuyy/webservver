@@ -25,6 +25,7 @@ $(document).ready(function () {
       }
     }
   });
+
   $.ajax({
     url: "/time",
     success: function (result) {
@@ -65,6 +66,7 @@ $(document).ready(function () {
       });
     },
   });
+
   $("#pump-btn").click(function () {
     $.ajax({ url: "/pump", success: function (result) {} });
   });
@@ -92,6 +94,7 @@ $(document).ready(function () {
       },
     });
   });
+  
   $("#submit-form").click(function () {
     const time = $("#time-value").val();
 

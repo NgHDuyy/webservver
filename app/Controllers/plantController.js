@@ -25,38 +25,9 @@ class plantController {
     });
   }
   async updateInfomation(req, res) {
-    // var o_id = new Object("63a5cf62320ace041b3d27be");
-    // Information.findOne({}, function(err, information) {
-    //   if(!err) {
-    //     information.soil_moisture = req.soil_moisture;
-    //     information.air_humidity = req.air_humidity;
-    //     information.soil_temperature = req.soil_temperature;
-    //     information.air_temperature = req.air_temperature;
-    //     information.save(function(err, data) {
-    //       if(!err) {
-    //         // console.log("Updated");
-    //         res.json(data);
-    //       }
-    //     });
-    //     // contact.save(function(err) {
-    //       //     if(!err) {
-    //       //         console.log("contact " + contact.phone + " created at " + contact.createdAt + " updated at " + contact.updatedAt);
-    //       //     }
-    //       //     else {
-    //       //         console.log("Error: could not save contact " + contact.phone);
-    //       //     }
-    //       // });
-    //   }
-    // });
-
     const id = "63a5cf62320ace041b3d27be";
-    // console.log(await Information.find({}))
-    // console.log(req.body)
     const result = await Information.findOneAndUpdate({_id: id}, { ...req.body}, { new: true});
-
     res.status(200).json(result);
-
-    // console.log(result)
   }
   
   getTime(req, res) {

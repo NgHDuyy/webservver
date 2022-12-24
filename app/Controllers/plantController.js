@@ -25,8 +25,8 @@ class plantController {
     });
   }
   async updateInfomation(req, res) {
-    const id = "63a5cf62320ace041b3d27be";
-    const result = await Information.findOneAndUpdate({_id: id}, { ...req.body}, { new: true});
+    const id = "1";
+    const result = await Information.findOneAndUpdate({id: id}, { ...req.body}, { new: true});
     res.status(200).json(result);
   }
   

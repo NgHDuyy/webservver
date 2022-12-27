@@ -16,11 +16,12 @@ class plantController {
   }
 
   getControl(req, res) {
-    const messages = new Messages({
-      messages: req.body.messages,
-    });
-    if (messages == "PumpON" || messages == "LampON") {
-      client.publish(channel("plant"), messages);
+    // const messages = new Messages({
+    //   messages: req.body.messages,
+    // });
+    var msg = req.body.messages;
+    if (msg == "PumpON" || msg == "LampON") {
+      client.publish(channel("plant"), msg);
       res.send("ok");
     }
   }

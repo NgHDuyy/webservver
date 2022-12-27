@@ -1,5 +1,6 @@
 const { client, channel } = require("../../client");
 const Time = require("../models/Time");
+const Messages = require("../models/Messages");
 const Information = require("../models/Information");
 const schedule = require("node-schedule");
 
@@ -8,10 +9,22 @@ class plantController {
     client.publish(channel("plant"), "PumpON");
     res.send("ok");
   }
+
   controlLamp(req, res) {
     client.publish(channel("plant"), "LampON");
     res.send("lampOK");
   }
+
+  getControl(req, res) {
+    const messages = new Messages({
+      messages: req.body.messages,
+    });
+    if (messages == "PumpON" || messages == "LampON") {
+      client.publish(channel("plant"), messages);
+      res.send("ok");
+    }
+  }
+
   updateData(req, res) {
     client.publish(channel("plant"), "UPDATE");
   }
@@ -26,10 +39,10 @@ class plantController {
   }
   async updateInfomation(req, res) {
     const id = "1";
-    const result = await Information.findOneAndUpdate({id: id}, { ...req.body}, { new: true});
+    const result = await Information.findOneAndUpdate({ id: id }, { ...req.body }, { new: true });
     res.status(200).json(result);
   }
-  
+
   getTime(req, res) {
     Time.find({}, null, { sort: { sum: 1 } }, (err, data) => {
       if (!err) {
@@ -44,6 +57,7 @@ class plantController {
       stamp: req.body.time,
       sum: Number(req.body.time.replace(":", ".")),
     });
+
     Time.findOne({ stamp: time.stamp }, (err, stamp) => {
       if (err) {
         console.log(err);

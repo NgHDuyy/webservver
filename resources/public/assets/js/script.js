@@ -73,27 +73,7 @@ $(document).ready(function () {
   $("#lamp-btn").click(function () {
     $.ajax({ url: "/lamp", success: function (result) {} });
   });
-  $("#btn30").click(function () {
-    let soil = $("#soil").val();
-    if (soil < 0 || soil >= 100) {
-      alert("Độ ẩm trong khoảng từ 0 - 100");
-      return;
-    }
-    $.ajax({
-      url: "/soil",
-      type: "post",
-      dataType: "text",
-      data: {
-        soil: soil,
-      },
-      success: function (result) {
-        if (result == "success") {
-          alert("Đã cập nhật giới hạn nhiệt độ");
-          $("#soil").text(soil);
-        }
-      },
-    });
-  });
+  
   
   $("#submit-form").click(function () {
     const time = $("#time-value").val();

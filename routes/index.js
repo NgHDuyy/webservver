@@ -2,6 +2,7 @@ const plantController = require('../app/Controllers/plantController');
 module.exports = {
     run: (app) => {
         app.get('/pump', plantController.controlPump);
+        app.post('/getControl', plantController.getControl);
         app.get('/lamp', plantController.controlLamp);
         app.get('/update', plantController.updateData);
         app.get('/time', plantController.getTime);
